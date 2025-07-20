@@ -1,6 +1,6 @@
 import unittest
-from flask import Flask
-from app import app 
+from app.main import app
+
 
 class TestVideoAPI(unittest.TestCase):
 
@@ -24,7 +24,7 @@ class TestVideoAPI(unittest.TestCase):
             response = client.get('/videos')
             self.assertEqual(response.status_code, 200)
             self.assertIsInstance(response.json, list)  
-            
+
     def test_get_video(self):
         """Verifica el endpoint /videos/<video_id>."""
         with app.test_client() as client:
