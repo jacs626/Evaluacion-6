@@ -26,8 +26,9 @@ jobs:
       - name: Lint with ruff
         run: |
           pip install ruff
-          ruff app tests
-          
+          ruff check app tests
+
+
       - name: Security audit
         run: |
           pip install pip-audit
